@@ -1,0 +1,149 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #282c34; /* Color de fondo principal */
+    color: #fff; /* Color de texto principal */
+}
+
+header {
+    background: #ff4500; /* Color de fondo del encabezado */
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    display: inline-block;
+	font-size: 2.5em;
+	font-family: sans-serif;
+	margin: -8px;
+	
+    
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Estilos de las series */
+.serie {
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    background: #fff; /* Color de fondo del contenedor de la serie */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.serie:hover {
+    transform: scale(1.05);
+}
+
+.serie img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.serie h2 {
+    margin: 10px 0;
+    color: #333; /* Color de texto del título de la serie */
+}
+
+/* Estilos para el botón Ver Trailer */
+.ver-trailer {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #ff4500; /* Color de fondo del botón */
+    color: #fff; /* Color de texto del botón */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.ver-trailer:hover {
+    background: #ff6a00; /* Cambia el color de fondo al pasar el mouse */
+}
+/* Estilos para la categoría */
+.serie p {
+    margin: 5px 0;
+    color: #777; /* Color de texto de la categoría */
+}
+/* Estilos para el botón "Ir a Películas" */
+button {
+    background-color: #ffffff; /* Color de fondo del botón */
+    color: #000000; /* Color del texto del botón */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px; /* Espacio superior para separar el botón del contenido */
+}
+
+button a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: #000000; /* Color del texto del enlace */
+}
+
+button:hover {
+    background-color: #ff6a00; /* Cambia el color de fondo al pasar el mouse */
+}
+
+
+
+
+
+
+.nav1{
+    list-style-type: none;
+    padding: 0;
+}
+
+.ul1{
+    list-style-type: none;
+    padding: 0;
+}
+
+.a1 {
+    display: inline;
+    margin-right: 20px;
+    text-shadow: 0px 100px 90px #e7511a;
+}
+
+.h1 {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    display: inline;
+    margin-right: 40px;
+    margin-left: 40px;
+    
+}
+
+.h1:hover {
+    color: #FF5733; /* Cambia el color al pasar el mouse */
+}
+
+h2{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    font-family: sans-serif;
+}
+
+h3{
+    margin: 0;
+    color: #fff; /* Color de texto del encabezado */ /* Color de fondo del título principal */
+    padding: 10px;/* Color de texto del encabezado */
+    text-align: center;
+    font-family: sans-serif;
+}
+
