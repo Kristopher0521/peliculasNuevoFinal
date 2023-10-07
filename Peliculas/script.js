@@ -4,25 +4,28 @@ const searchInput = document.getElementById('search-input');
 const resultsContainer = document.getElementById('results');
 const body = document.body; // Capturamos el elemento body. La parte principal de la página.
 
-// Este array ("series") contendrá objetos que representan series.
-const series = [
-    // Cada objeto contiene una propiedad "title" para el título de la serie.
-    // { title: 'NARCOS' },
-    // { title: 'PEAKY BLINDERS' },
-    // { title: 'EL RECLUSO' },
-    // { title: 'HOMBRE VS. ABEJA' },
-    // { title: 'COMO VIVIR CONTIGO MISMO' },
-    // { title: 'BRONCA' },
-    // { title: 'BREAKING BAD' },
-    // { title: 'DAYBREAK' },
-    // { title: 'EL JUEGO DEL CALAMAR' },
-    // { title: 'INSATIABLE' },
-    // { title: 'PRISON PLAYBLOOK' },
-    // { title: 'COBRA KAI' },
-    // { title: 'MANIFIESTO' },
-    // { title: 'LUPIN' },
-    // { title: 'OBSESION' },
-    // { title: 'LA CHICA NIEVE' }
+// Este array ("movies") contendrá objetos que representan películas.
+const movies = [
+    // Cada objeto contiene una propiedad "title" para el título de la película.
+    // Todo en peliculas y comedia
+    { title: 'Dora' },
+    { title: 'Intriga' },
+    { title: 'Scream' },
+    { title: 'Armados y peligrosos' },
+    { title: 'Masacre en Texas' },
+    { title: 'Chuky' },
+    { title: 'Malefico' },
+    { title: 'Telefono' },
+    { title: 'La casa bago el agua' },
+    { title: 'Paternidad' },
+    { title: 'El infierno' },
+    { title: 'Ruido de fondo' },
+    { title: 'Miserio a bordo' },
+    { title: 'Dos policias rebeldes' },
+    // Comedia
+    { title: 'Ustedes' },
+    // Acción
+    { title: 'El conde' }
 ];
 
 // "searchInput" se activa cada vez que se ingresa texto en el buscador.
@@ -30,11 +33,11 @@ searchInput.addEventListener('input', () => {
     // Se obtiene el valor actual del campo con "searchTerm" y luego se convierte a minúsculas con "toLowerCase" para que sea
     // insensible a minúsculas y mayúsculas.
     const searchTerm = searchInput.value.toLowerCase();
-    // Luego se filtran las series en el array "series" para encontrar coincidencias de la búsqueda en los títulos.
-    // Estos resultados se almacenan en "filteredSeries".
-    const filteredSeries = series.filter(serie => serie.title.toLowerCase().includes(searchTerm));
+    // Luego se filtran las películas en el array "movies" para encontrar coincidencias de la búsqueda en los títulos.
+    // Estos resultados se almacenan en "filteredMovies".
+    const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(searchTerm));
     // Ya luego se llama la función "displayResults" para mostrar los resultados en el contenedor de resultados.
-    displayResults(filteredSeries);
+    displayResults(filteredMovies);
 });
 
 // Agregamos un evento de clic al elemento body para eliminar los resultados cuando se hace clic en otra parte de la pantalla
@@ -67,23 +70,23 @@ function displayResults(results) {
         resultsContainer.appendChild(noResultsDiv);
     } else {
         // Itera a través de los resultados y crea un elemento "div" para cada resultado.
-        series.forEach((serie, index) => {
+        movies.forEach((movie, index) => {
             const resultDiv = document.createElement('div');
-            resultDiv.classList.add('serie'); // Agrega la clase "serie" a todos los elementos de serie
+            resultDiv.classList.add('pelicula'); // Agrega la clase "pelicula" a todos los elementos de película
 
-            // Comprueba si el título de la serie está en la lista de resultados.
-            const isMatch = results.some(result => result.title.toLowerCase() === serie.title.toLowerCase());
+            // Comprueba si el título de la película está en la lista de resultados.
+            const isMatch = results.some(result => result.title.toLowerCase() === movie.title.toLowerCase());
 
             if (isMatch) {
-                // Si coincide, muestra la serie
+                // Si coincide, muestra la película
                 resultDiv.innerHTML = `
-                    <img src="../img/images (${index + 3}).jpg" alt="Serie ${index + 3}">
-                    <h2>${serie.title}</h2>
-                    <p>Categoría: Drama</p>
-                    <a class="ver-trailer" href="ENLACE_YOUTUBE_SERIE_${index + 3}" target="_blank">Ver Trailer</a>
+                    <img src="../img/images (${index + 3}).jpg" alt="Película ${index + 3}">
+                    <h2>${movie.title}</h2>
+                    <p>Género: Drama</p>
+                    <a class="ver-trailer" href="ENLACE_YOUTUBE_PELICULA_${index + 3}" target="_blank">Ver Trailer</a>
                 `;
             } else {
-                // Si no coincide, oculta la serie
+                // Si no coincide, oculta la película
                 resultDiv.style.display = 'none';
             }
 
@@ -97,3 +100,4 @@ function displayResults(results) {
 function clearResults() {
     resultsContainer.innerHTML = '';
 }
+
